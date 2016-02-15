@@ -14,4 +14,3 @@ Modify the `main.c` file to suit your needs. Then do the following commands to r
     
     ./mym
     The program name can be changed in the Makefile file.
-    
