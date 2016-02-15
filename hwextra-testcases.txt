@@ -1,0 +1,57 @@
+
+  Test Cases
+  ==========
+
+  // Statements
+  char *a = (char *) malloc(4500);
+  char *b = (char *) malloc(50);
+  char *c = (char *) malloc(50);
+  free(a);
+  free(b);
+  free(b);
+
+  Expected Output:
+     Allocated memory:  <address1> (4500)
+     Space remaining: 404
+     Allocated memory:  <address2> (50)
+     Space remaining: 322
+     Allocated memory:  <address3> (50)
+     Space remaining: 240
+     Memory freed:    <address1> (4500)
+     Memory freed:    <address2> (50)
+     ** Memory already freed in main.c:11
+
+  // Statements
+  char *d = (char *) malloc(4550);
+  char *e = (char *) malloc(50);
+  free(b);
+
+    Expected Output:
+       Allocated memory:  <address1> (4550)
+       Allocated memory:  <address4> (50)
+       Space remaining: 158
+       ** Error freeing memory in main.c:14
+
+  // Statements
+  char *f = (char *) malloc(168);
+  free(e);
+
+    Expected Output:
+       ** Error allocating space in main.c:15
+       Memory freed:    <address4> (50)
+
+  // Statements
+  int x = 3;
+  int *z = &x;
+  free(z);
+
+    Expected Output:
+       ** Error freeing memory in main.c:20
+
+  // Statements
+  int *g = (int *) malloc(208);
+
+    Expected Output:
+       Allocated memory:  <address4> (208)
+       Space remaining: 0
+ 
