@@ -6,7 +6,7 @@ A smarter free() and malloc() function for C. Uses an array of size 5000 (can be
 
 Program will also try to prevent fragmentation issues by merging open blocks of memory in the array.
 
-## ![] (http://i.imgur.com/yUTUt5e.png) Usage
+## ![](http://i.imgur.com/yUTUt5e.png) Usage
 Modify the `main.c` file to suit your needs. Then do the following commands to run your program:
 
     In terminal type: make && make clean
